@@ -5,12 +5,12 @@ Player = require 'lib.player'
 
 ui= UI!
 
-reset = ->
-	player = Player 200, 200, 75, 75, 10
+--reset = ->
+player = Player 200, 200, 75, 75, 10
 
-	color = Colors!
-	painter = Painter!
-	paint = painter\paint
+color = Colors!
+painter = Painter!
+paint = painter\paint
 
 startup = true
 

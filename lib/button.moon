@@ -20,7 +20,6 @@ class Button
 		else 
 			@hover = false
 
-
 	is_clicked: =>
 		if @hover
 			if love.mouse.isDown ctrl.lmb
@@ -28,8 +27,6 @@ class Button
 				return true
 				
 		@clicked = false
-
-
 
 	draw: =>
 		if @hover

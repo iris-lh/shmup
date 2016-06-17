@@ -7,8 +7,6 @@ font_dpsd = love.graphics.newFont 'lib/fonts/DPSDbeyond.otf', 15
 
 
 
-
-
 btn_reset = Button 700, 10, 75, 20, 'gray', 'Reset'
 btn_quit = Button 715, 40, 60, 20, 'gray', 'Quit'
 
