@@ -1,6 +1,5 @@
 Painter = require 'lib.painter'
-painter = Painter!
-paint = painter\paint
+paint = Painter\paint
 
 class Bullet
 	new: (@x, @y, @w, @h, @speed) =>

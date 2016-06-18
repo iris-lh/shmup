@@ -9,22 +9,20 @@ do
   end
 end
 local font_dpsd = love.graphics.newFont('lib/fonts/DPSDbeyond.otf', 15)
-local btn_reset = Button(700, 10, 75, 20, 'gray', 'Reset')
-local btn_quit = Button(715, 40, 60, 20, 'gray', 'Quit')
-local buttons = {
-  btn_reset,
-  btn_quit
+local btn = {
+  reset = Button(700, 10, 75, 20, 'gray', 'Reset'),
+  quit = Button(715, 40, 60, 20, 'gray', 'Quit')
 }
 local UI
 do
   local _class_0
   local _base_0 = {
     update = function(self)
-      if btn_quit:is_hover() and btn_quit:is_clicked() then
+      if btn.quit:is_hover() and btn.quit:is_clicked() then
         love.event.quit()
       end
-      if btn_reset:is_hover() and btn_reset:is_clicked() then
-        btn_reset.text = 'YEET!'
+      if btn.reset:is_hover() and btn.reset:is_clicked() then
+        btn.reset.text = 'YEET!'
       end
     end,
     draw = function(self)
@@ -35,7 +33,7 @@ do
       love.graphics.setFont(font_dpsd)
       love.graphics.print(fps .. ' fps', 10, 10)
       love.graphics.setFont(font_dpsd)
-      for i, button in pairs(buttons) do
+      for i, button in pairs(btn) do
         button:draw()
       end
     end

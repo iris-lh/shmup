@@ -7,8 +7,9 @@ color = Colors!
 painter = Painter! 
 ctrl = Controls!
 
-
 paint = painter\paint
+
+
 
 class Player
 	new: (@x, @y, @w, @h, @speed) =>
@@ -17,7 +18,7 @@ class Player
 		love.graphics.rectangle 'line', @x, @y, @w, @h
 		--bullet\draw!
 
-	control: =>
+	update: =>
 		pressed = love.keyboard.isDown
 
 		-- HORIZONTAL MOVEMENT
@@ -35,7 +36,3 @@ class Player
 			@y -= @speed
 		elseif pressed ctrl.down
 			@y += @speed
-
-		-- SHOOTING
-		if pressed ctrl.shoot 
-			--bullet = Bullet @x, @y, 15, 30, 20

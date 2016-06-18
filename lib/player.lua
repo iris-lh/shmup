@@ -21,7 +21,7 @@ do
       paint('green')
       return love.graphics.rectangle('line', self.x, self.y, self.w, self.h)
     end,
-    control = function(self)
+    update = function(self)
       local pressed = love.keyboard.isDown
       if (pressed(ctrl.left)) and (pressed(ctrl.right)) then
         local _ = nil
@@ -31,14 +31,11 @@ do
         self.x = self.x + self.speed
       end
       if (pressed(ctrl.up)) and (pressed(ctrl.down)) then
-        local _ = nil
+        return nil
       elseif pressed(ctrl.up) then
         self.y = self.y - self.speed
       elseif pressed(ctrl.down) then
         self.y = self.y + self.speed
-      end
-      if pressed(ctrl.shoot) then
-        local bullet = Bullet(self.x, self.y, 15, 30, 20)
       end
     end
   }

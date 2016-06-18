@@ -1,28 +1,16 @@
-Colors = require 'lib.colors'
-Painter = require 'lib.painter'
 UI = require 'lib.ui'
 Player = require 'lib.player'
 
-ui= UI!
-
-player = Player 200, 200, 75, 75, 10
-
-color = Colors!
-painter = Painter!
-paint = painter\paint
-
-startup = true
-
 love.load = ->
-
-
+	export elements = {
+		ui: UI!
+		player: Player 200, 200, 75, 75, 10
+	}
 
 love.update = (dt) ->
-	player\control!
-	ui\update!
-
-
-
+	for i,element in pairs elements
+		element\update!
+	
 love.draw = ->
-	player\draw!
-	ui\draw!
+	for i,element in pairs elements
+		element\draw!

@@ -1,8 +1,7 @@
 local Painter = require('lib.painter')
-local painter = Painter()
 local paint
 do
-  local _base_0 = painter
+  local _base_0 = Painter
   local _fn_0 = _base_0.paint
   paint = function(...)
     return _fn_0(_base_0, ...)

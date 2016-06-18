@@ -5,14 +5,9 @@ paint = Painter\paint
 
 font_dpsd = love.graphics.newFont 'lib/fonts/DPSDbeyond.otf', 15
 
-
-
-btn_reset = Button 700, 10, 75, 20, 'gray', 'Reset'
-btn_quit = Button 715, 40, 60, 20, 'gray', 'Quit'
-
-buttons = {
-	btn_reset,
-	btn_quit
+btn = {
+	reset: Button 700, 10, 75, 20, 'gray', 'Reset'
+	quit: Button 715, 40, 60, 20, 'gray', 'Quit'
 }
 
 
@@ -20,10 +15,11 @@ buttons = {
 class UI
 	new: =>
 	update: =>
-		if btn_quit\is_hover! and btn_quit\is_clicked!
+		if btn.quit\is_hover! and btn.quit\is_clicked!
 			love.event.quit!
-		if btn_reset\is_hover! and btn_reset\is_clicked!
-			btn_reset.text = 'YEET!'
+
+		if btn.reset\is_hover! and btn.reset\is_clicked!
+			btn.reset.text = 'YEET!'
 
 	draw: =>
 		--BORDER
@@ -38,5 +34,5 @@ class UI
 
 		--BUTTONS
 		love.graphics.setFont font_dpsd
-		for i,button in pairs buttons
+		for i,button in pairs btn
 			button\draw!

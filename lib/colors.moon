@@ -3,7 +3,6 @@ class Colors
 		black: 		{0,   0,   0,   255, 'black'}
 		gray: 		{127, 127, 127, 255, 'gray'}
 		white: 		{255, 255, 255, 255, 'white'}
-
 		red: 		{255, 0,   0,   255, 'red'}
 		orange: 	{255, 127, 0,   255, 'orange'}
 		yellow: 	{255, 255, 0,   255, 'yellow'}
