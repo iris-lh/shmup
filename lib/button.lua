@@ -16,23 +16,16 @@ do
     is_hover = function(self)
       local mouse_x, mouse_y = love.mouse.getPosition()
       if mouse_x >= self.x and mouse_x <= self.x + self.w and mouse_y >= self.y and mouse_y <= self.y + self.h then
-        self.hover = true
         return true
-      else
-        self.hover = false
       end
     end,
     is_clicked = function(self)
-      if self.hover then
-        if love.mouse.isDown(ctrl.lmb) then
-          self.clicked = true
-          return true
-        end
+      if love.mouse.isDown(ctrl.lmb) then
+        return true
       end
-      self.clicked = false
     end,
     draw = function(self)
-      if self.hover then
+      if self:is_hover() then
         paint(self.idle_color)
         love.graphics.rectangle('fill', self.x, self.y, self.w, self.h)
         paint('black')

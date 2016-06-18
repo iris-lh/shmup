@@ -17,7 +17,8 @@ end
 local startup = true
 love.load = function() end
 love.update = function(dt)
-  return player:control()
+  player:control()
+  return ui:update()
 end
 love.draw = function()
   player:draw()

@@ -19,6 +19,12 @@ buttons = {
 
 class UI
 	new: =>
+	update: =>
+		if btn_quit\is_hover! and btn_quit\is_clicked!
+			love.event.quit!
+		if btn_reset\is_hover! and btn_reset\is_clicked!
+			btn_reset.text = 'YEET!'
+
 	draw: =>
 		--BORDER
 		paint 'white'

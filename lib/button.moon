@@ -15,21 +15,14 @@ class Button
 
 			mouse_y >= @y and 
 			mouse_y <= @y+@h
-			@hover = true
-			return true
-		else 
-			@hover = false
+			return true 
 
 	is_clicked: =>
-		if @hover
-			if love.mouse.isDown ctrl.lmb
-				@clicked = true
-				return true
-				
-		@clicked = false
+		if love.mouse.isDown ctrl.lmb
+			return true
 
 	draw: =>
-		if @hover
+		if @is_hover!
 			paint @idle_color
 			love.graphics.rectangle 'fill', @x, @y, @w, @h
 			paint 'black'

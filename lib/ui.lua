@@ -19,6 +19,14 @@ local UI
 do
   local _class_0
   local _base_0 = {
+    update = function(self)
+      if btn_quit:is_hover() and btn_quit:is_clicked() then
+        love.event.quit()
+      end
+      if btn_reset:is_hover() and btn_reset:is_clicked() then
+        btn_reset.text = 'YEET!'
+      end
+    end,
     draw = function(self)
       paint('white')
       love.graphics.rectangle('line', 0, 0, 800, 600)

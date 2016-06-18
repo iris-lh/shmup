@@ -5,7 +5,6 @@ Player = require 'lib.player'
 
 ui= UI!
 
---reset = ->
 player = Player 200, 200, 75, 75, 10
 
 color = Colors!
@@ -20,13 +19,10 @@ love.load = ->
 
 love.update = (dt) ->
 	player\control!
+	ui\update!
 
 
 
 love.draw = ->
-	-- border
-	--paint 'white'
-	--love.graphics.rectangle 'line', 0, 0, 800, 600
-
 	player\draw!
 	ui\draw!
