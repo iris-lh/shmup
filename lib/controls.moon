@@ -1,8 +1,8 @@
 class Controls
 	new: =>
 
-	lmb: 'l'
-	rmb: 'r'
+	lmb: '1'
+	rmb: '3'
 
 	up: 'w'
 	down: 's'
